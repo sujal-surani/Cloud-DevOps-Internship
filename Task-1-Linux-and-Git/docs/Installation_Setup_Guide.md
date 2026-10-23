@@ -72,3 +72,14 @@ As the system is being updated side by side.. The logs also include the logs of 
 `top`
 
 ![Monitor Processes - Top](../screenshots/9-monitor-top.png)
+
+---
+
+## 5. Git & SSH Configuration
+To satisfy the version control requirements, I verified my pre-configured Git environment and successfully authenticated my SSH connection with GitHub.
+
+**Commands Executed:**
+`git config --list`
+`ssh -T git@github.com`
+
+![SSH Authentication Proof](../screenshots/10-ssh-proof.png)
