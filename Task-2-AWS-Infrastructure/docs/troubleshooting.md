@@ -1,12 +1,12 @@
 # Troubleshooting Log
 
-## 1. S3 Static Website Rendered Raw HTML as Plain Text
-* **Symptom:** Opening the S3 Bucket website endpoint (`company-static-site.devops.s3-website.ap-south-1.amazonaws.com`) displayed the raw HTML source code instead of rendering the webpage.
-* **Root Cause:** The uploaded `index.html` object had its `Content-Type` metadata set to `text/plain` rather than `text/html`.
-* **Resolution:**
-  1. Opened `index.html` in the S3 console and navigated to **Properties → Metadata**.
-  2. Updated the system-defined `Content-Type` metadata value to `text/html`.
-  3. Performed a hard refresh (`Ctrl + Shift + R`) on the static website endpoint, confirming the page and `logo.png` rendered properly.
+## 1. S3 Static Website Showed Raw Code Instead of the Webpage
+* **Problem:** When opening the S3 static website URL (`company-static-site.devops.s3-website.ap-south-1.amazonaws.com`), the browser displayed the raw HTML code as plain text instead of rendering the page.
+* **Cause:** The file was accidentally uploaded with a `.txt` extension instead of `.html`.
+* **Fix:**
+  1. Deleted the `.txt` file from the S3 bucket.
+  2. Renamed and saved the file properly as `index.html`, then re-uploaded it to the bucket.
+  3. Refreshed the website URL, and the page along with `logo.png` loaded normally.
 
 ## 2. CloudWatch "All metrics" Renamed in Updated Console
 * **Symptom:** The standard **Metrics → All metrics** sidebar option was not visible in the updated CloudWatch console.
